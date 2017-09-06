@@ -60,14 +60,15 @@ class BlogController extends Controller
     }
 
     /**
-     * Permanent redirect from old link to the new one
+     * Permanent redirect from old link to the new one.
      *
      * @param $slug
      * @return \Illuminate\Http\Response
-    */
+     */
     public function handleOldLink($slug)
     {
         $prefix = \Canvas\Helpers\RouteHelper::getBlogPrefix();
+
         return redirect()->to("/{$prefix}/post/{$slug}", 301);
     }
 }
