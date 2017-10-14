@@ -67,8 +67,6 @@ class BlogController extends Controller
      */
     public function handleOldLink($slug)
     {
-        $prefix = \Canvas\Helpers\RouteHelper::getBlogPrefix();
-
-        return redirect()->to("/{$prefix}/post/{$slug}", 301);
+        return redirect()->route('canvas.blog.post.show', ['slug' => $slug], 301);
     }
 }
